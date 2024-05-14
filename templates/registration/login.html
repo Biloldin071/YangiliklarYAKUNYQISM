@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Biz haqimizda {% endblock title %}
+
+{% block content %}
+    <h1>Kirish oynasi</h1>
+
+
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">SignIn</button>
+    </form>
+
+    <a href="{% url 'password_reset' %}"><button>Reset Password</button></a>
+
+    <h3>
+        <a href="{% url 'user_register' %}"><button>Registration</button></a>
+    </h3>
+
+{% endblock %}
